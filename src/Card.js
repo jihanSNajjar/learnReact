@@ -1,5 +1,6 @@
 import React from "react";
-
+import { CiStar } from "react-icons/ci";
+import { FaStar } from "react-icons/fa";
 const Card = (props) => {
   return (
     <div className="card">
@@ -10,13 +11,20 @@ const Card = (props) => {
           backgroundImage: `url(${props.item.image})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          لاشckgroundPosition: "center",
+          backgroundPosition: "center",
 
         }}
       ></div>
-      <h3 className="card--name">{props.item.name}</h3>
-      <p className="card--price">${props.item.price}$ night</p>
-      <p className="card--description">{props.item.description}</p>
+    <div className="card--stats" style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'0 10px',lineHeight:'.15',marginTop:'10px'}}>
+ <h3 className="card--name"style={{}}>{props.item.name}</h3>
+<FaStar color="yellow" size={25} />
+    </div>
+     
+
+      <p style={{paddingLeft:"10px",marginTop:"0"}} className="card--price">
+        <span style={{fontWeight:"bold",fontSize:"21px"}}>${props.item.price}  
+          </span> night</p>
+      <p style={{paddingLeft:"10px"}} className="card--description">{props.item.description}</p>
     </div>
   );
 };
